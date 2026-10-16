@@ -1,0 +1,23 @@
+<!--
+  电视端（-television）专用的"发弹幕"图标：图形与 drawable/ic_send_damu.xml 完全一致，
+  仅把显示尺寸从 14dp 放大到 24dp —— 电视上按钮里的图标太小看不清。
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+  <path
+      android:pathData="M42,6L4,20.1383L24,24.0083L29.0052,44L42,6Z"
+      android:strokeLineJoin="round"
+      android:strokeWidth="4"
+      android:fillColor="#00000000"
+      android:strokeColor="#ffffff"/>
+  <path
+      android:pathData="M24.0083,24.0083L29.6651,18.3515"
+      android:strokeLineJoin="round"
+      android:strokeWidth="4"
+      android:fillColor="#00000000"
+      android:strokeColor="#ffffff"
+      android:strokeLineCap="round"/>
+</vector>

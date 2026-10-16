@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">禁止熬夜投屏专用 电视端</string>
+
+    <string name="tv_subtitle">本地播放 · 投屏接收 · 遥控器操作</string>
+
+    <string name="tv_local_media">本地媒体库</string>
+    <string name="tv_local_media_desc">浏览电视/U盘里的视频并播放</string>
+
+    <string name="tv_screencast_receiver">投屏接收端</string>
+    <string name="tv_screencast_receiver_desc">接收手机投过来的视频/弹幕/字幕</string>
+    <string name="tv_screencast_receiver_running">● 运行中，手机可以直接投过来</string>
+    <string name="tv_screencast_receiver_stopped">未开启，进入后可手动启动</string>
+    <string name="tv_screencast_addr">投屏地址 %1$s:%2$d</string>
+    <string name="tv_permission_storage_denied">没有文件读取权限，无法打开媒体库</string>
+
+    <string name="tv_play_history">播放历史</string>
+    <string name="tv_scan_manager">扫描目录</string>
+    <string name="tv_player_setting">播放器设置</string>
+    <string name="tv_app_setting">应用设置</string>
+
+    <string name="tv_tips_remote">用遥控器方向键选择，按确认键进入</string>
+</resources>

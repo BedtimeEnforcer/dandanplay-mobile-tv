@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <!-- 轻享版：DLNA 投屏期间需要保持 WiFi 与 CPU 不睡（否则息屏一会儿就断流） -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application>
+        <activity
+            android:name=".ui.activities.storage_plus.StoragePlusActivity"
+            android:theme="@style/DialogActivityTheme"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".ui.activities.storage_file.StorageFileActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".ui.activities.remote_scan.RemoteScanActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".ui.activities.screencast.receiver.ScreencastActivity"
+            android:configChanges="screenSize" />
+
+        <service
+            android:name=".services.ScreencastProvideService"
+            android:exported="false" />
+        <service
+            android:name=".services.ScreencastReceiveService"
+            android:exported="false" />
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="merge">
+            <meta-data
+                android:name="com.xyoye.storage_component.providers.ThunderInitializer"
+                android:value="androidx.startup" />
+        </provider>
+    </application>
+
+</manifest>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/player_lock_iv"
+            android:layout_width="@dimen/player_control_side_btn_size"
+            android:layout_height="@dimen/player_control_side_btn_size"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/player_control_side_btn_margin"
+            android:background="@drawable/background_player_action"
+            android:focusable="true"
+            android:nextFocusRight="@+id/player_shot_iv"
+            android:nextFocusUp="@+id/back_iv"
+            android:nextFocusLeft="@+id/player_lock_iv"
+            android:nextFocusDown="@+id/play_iv"
+            android:padding="@dimen/player_control_side_btn_padding"
+            android:src="@drawable/ic_player_lock"
+            android:translationX="@dimen/player_control_side_btn_hidden_translation"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/player_shot_iv"
+            android:layout_width="@dimen/player_control_side_btn_size"
+            android:layout_height="@dimen/player_control_side_btn_size"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginEnd="@dimen/player_control_side_btn_margin"
+            android:background="@drawable/background_player_action"
+            android:focusable="true"
+            android:nextFocusLeft="@+id/player_lock_iv"
+            android:nextFocusUp="@+id/iv_switch_popup"
+            android:nextFocusRight="@+id/player_lock_iv"
+            android:nextFocusDown="@+id/danmu_control_iv"
+            android:padding="@dimen/player_control_side_btn_padding"
+            android:src="@mipmap/ic_video_screenshot"
+            android:translationX="@dimen/player_control_side_btn_offset"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <com.xyoye.player.controller.video.MessageContainer
+            android:id="@+id/message_container"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="75dp"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical" />
+
+    </FrameLayout>
+</layout>

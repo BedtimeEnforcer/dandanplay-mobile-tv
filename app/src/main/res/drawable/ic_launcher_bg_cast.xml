@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 弹弹play 投屏版：自适应图标背景（深青色，与「轻享版」的蓝色图标区分开） -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#12798C"
+        android:pathData="M0,0h108v108h-108z" />
+</vector>

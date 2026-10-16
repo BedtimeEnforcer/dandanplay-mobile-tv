@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 电视端自己的一套配色，不依赖其他模块，保证在任何主题下都清晰可读 -->
+<resources>
+    <color name="tv_bg">#F2F4F7</color>
+    <color name="tv_card_bg">#FFFFFF</color>
+    <color name="tv_card_bg_focused">#E4F0FE</color>
+    <color name="tv_card_stroke">#E3E6EB</color>
+    <color name="tv_accent">#2095F4</color>
+    <color name="tv_text">#1B1D21</color>
+    <color name="tv_text_secondary">#8B9099</color>
+    <color name="tv_white">#FFFFFF</color>
+</resources>

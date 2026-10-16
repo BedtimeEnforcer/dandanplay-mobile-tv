@@ -1,0 +1,12 @@
+/local.properties
+/keystore.properties
+/build
+/.idea
+/.gradle
+/.settings
+.externalNativeBuild
+*.iws
+*.iml
+*.jks
+dadanplay.jks
+keystore.properties

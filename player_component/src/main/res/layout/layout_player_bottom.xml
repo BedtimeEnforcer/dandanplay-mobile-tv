@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  播放器底栏。
+
+  布局结构（改动后）：
+  ┌──────────────────────────────────────────────────────────────┐
+  │ 00:00 ──────────●─────────────────────────────── 24:00       │ ← 进度行，整行铺满（位置未变）
+  │                       [◀◀] [▶] [▶▶] [选集] [发弹幕] [弹幕] [⚙] │ ← 按钮行，全部靠右
+  └──────────────────────────────────────────────────────────────┘
+
+  按钮集中到右下角：整行从右往左依次锚定（设置键贴右边缘），
+  手机上仍然是整行可点（触摸不受影响，只是位置从底部左侧移到右下角）。
+  尺寸全部走 dimen，电视端由 values-television/dimens.xml 放大。
+-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/player_bottom_ll"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/player_bottom_bar_height"
+        android:layout_gravity="bottom"
+        android:background="@color/player_item_bg_color"
+        android:translationY="@dimen/player_bottom_bar_hidden_translation"
+        tools:translationY="0dp">
+
+        <!-- ===== 进度行 ===== -->
+
+        <TextView
+            android:id="@+id/current_position_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/player_control_progress_row_height"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/player_control_progress_row_margin_top"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:textColor="@color/text_white_immutable"
+            android:textSize="@dimen/player_control_time_text_size"
+            app:layout_constraintEnd_toStartOf="@id/play_seek_bar"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00:00" />
+
+        <SeekBar
+            android:id="@+id/play_seek_bar"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginHorizontal="@dimen/player_control_seek_margin"
+            android:focusable="false"
+            android:max="100"
+            android:maxHeight="4dp"
+            android:minHeight="4dp"
+            android:paddingHorizontal="10dp"
+            android:progressDrawable="@drawable/background_seek_progress"
+            android:thumb="@drawable/ic_player_seek_ball"
+            app:layout_constraintBottom_toBottomOf="@id/current_position_tv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/current_position_tv" />
+
+        <TextView
+            android:id="@+id/duration_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:textColor="@color/text_white_immutable"
+            android:textSize="@dimen/player_control_time_text_size"
+            app:layout_constraintBottom_toBottomOf="@id/current_position_tv"
+            app:layout_constraintStart_toEndOf="@id/play_seek_bar"
+            app:layout_constraintTop_toTopOf="@id/current_position_tv"
+            tools:text="00:00" />
+
+        <!-- ===== 按钮行：右下角按钮组 =====
+             视觉顺序（从左到右）：上一个、播放/暂停、下一个、选集、发弹幕、弹幕、设置
+             锚定顺序（从右到左）：设置 → 弹幕 → 发弹幕 → 选集 → 下一个 → 播放 → 上一个
+             被隐藏（GONE）的按钮会自动收起，其余按钮依然贴住右边缘 -->
+
+        <ImageView
+            android:id="@+id/iv_previous_source"
+            android:layout_width="@dimen/player_control_btn_size"
+            android:layout_height="@dimen/player_control_btn_size"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/player_control_btn_margin"
+            android:background="@drawable/background_player_control_item"
+            android:focusable="true"
+            android:nextFocusDown="@+id/iv_previous_source"
+            android:nextFocusLeft="@+id/player_settings_iv"
+            android:nextFocusRight="@+id/play_iv"
+            android:nextFocusUp="@+id/back_iv"
+            android:padding="@dimen/player_control_btn_padding"
+            android:src="@drawable/ic_video_previous"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/play_iv"
+            app:layout_constraintTop_toBottomOf="@id/current_position_tv" />
+
+        <ImageView
+            android:id="@+id/play_iv"
+            android:layout_width="@dimen/player_control_play_width"
+            android:layout_height="@dimen/player_control_play_height"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/player_control_btn_margin"
+            android:background="@drawable/background_player_control_item"
+            android:focusable="true"
+            android:nextFocusDown="@+id/play_iv"
+            android:nextFocusLeft="@+id/iv_previous_source"
+            android:nextFocusRight="@+id/iv_next_source"
+            android:nextFocusUp="@+id/back_iv"
+            android:padding="@dimen/player_control_play_padding"
+            android:src="@drawable/ic_play_bt"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/iv_next_source"
+            app:layout_constraintTop_toBottomOf="@id/current_position_tv" />
+
+        <ImageView
+            android:id="@+id/iv_next_source"
+            android:layout_width="@dimen/player_control_btn_size"
+            android:layout_height="@dimen/player_control_btn_size"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/player_control_btn_margin"
+            android:background="@drawable/background_player_control_item"
+            android:focusable="true"
+            android:nextFocusDown="@+id/iv_next_source"
+            android:nextFocusLeft="@+id/play_iv"
+            android:nextFocusRight="@+id/video_list_iv"
+            android:nextFocusUp="@+id/back_iv"
+            android:padding="@dimen/player_control_btn_padding"
+            android:src="@drawable/ic_video_next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/video_list_iv"
+            app:layout_constraintTop_toBottomOf="@id/current_position_tv" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/video_list_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/player_control_btn_size"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/player_control_btn_margin"
+            android:background="@drawable/background_send_danmu_bt"
+            android:drawablePadding="@dimen/player_control_text_drawable_padding"
+            android:focusable="true"
+            android:gravity="center"
+            android:nextFocusDown="@+id/video_list_iv"
+            android:nextFocusLeft="@+id/iv_next_source"
+            android:nextFocusRight="@+id/send_danmu_tv"
+            android:nextFocusUp="@+id/iv_switch_popup"
+            android:padding="@dimen/player_control_text_padding"
+            android:text="@string/select_video_source"
+            android:textColor="@color/text_white_immutable"
+            android:textSize="@dimen/player_control_text_size"
+            app:drawableStartCompat="@drawable/ic_video_list"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/send_danmu_tv"
+            app:layout_constraintTop_toBottomOf="@id/current_position_tv" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/send_danmu_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/player_control_btn_size"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/player_control_btn_margin"
+            android:background="@drawable/background_send_danmu_bt"
+            android:drawablePadding="@dimen/player_control_text_drawable_padding"
+            android:focusable="true"
+            android:gravity="center"
+            android:nextFocusDown="@+id/send_danmu_tv"
+            android:nextFocusLeft="@+id/video_list_iv"
+            android:nextFocusRight="@+id/danmu_control_iv"
+            android:nextFocusUp="@+id/iv_switch_popup"
+            android:padding="@dimen/player_control_text_padding"
+            android:text="@string/send_danmu"
+            android:textColor="@color/text_white_immutable"
+            android:textSize="@dimen/player_control_text_size"
+            app:drawableStartCompat="@drawable/ic_send_damu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/danmu_control_iv"
+            app:layout_constraintTop_toBottomOf="@id/current_position_tv" />
+
+        <ImageView
+            android:id="@+id/danmu_control_iv"
+            android:layout_width="@dimen/player_control_btn_size"
+            android:layout_height="@dimen/player_control_btn_size"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/player_control_btn_margin"
+            android:background="@drawable/background_player_control_item"
+            android:focusable="true"
+            android:nextFocusDown="@+id/danmu_control_iv"
+            android:nextFocusLeft="@+id/send_danmu_tv"
+            android:nextFocusRight="@+id/player_settings_iv"
+            android:nextFocusUp="@+id/iv_switch_popup"
+            android:src="@drawable/ic_danmaku_control"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/player_settings_iv"
+            app:layout_constraintTop_toBottomOf="@id/current_position_tv" />
+
+        <ImageView
+            android:id="@+id/player_settings_iv"
+            android:layout_width="@dimen/player_control_btn_size"
+            android:layout_height="@dimen/player_control_btn_size"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/player_control_row_margin_end"
+            android:background="@drawable/background_player_control_item"
+            android:focusable="true"
+            android:nextFocusDown="@+id/player_settings_iv"
+            android:nextFocusLeft="@+id/danmu_control_iv"
+            android:nextFocusRight="@+id/iv_previous_source"
+            android:nextFocusUp="@+id/iv_switch_popup"
+            android:padding="@dimen/player_control_btn_padding"
+            android:src="@drawable/ic_player_setting"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/current_position_tv" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="control_bar_height">46dp</dimen>
+
+    <!-- 顶栏操作按钮宽度（返回、悬浮窗） -->
+    <dimen name="player_top_action_btn_width">44dp</dimen>
+    <dimen name="aspect_btn_height">20dp</dimen>
+
+    <!-- ============================================================
+         播放器控制栏尺寸（手机/触摸端默认值 == 改动前的硬编码尺寸）
+         电视端由 values-television/dimens.xml 覆盖为放大的值
+         ============================================================ -->
+
+    <!-- 顶栏：高度 & 收起时的位移 -->
+    <dimen name="player_top_bar_height">50dp</dimen>
+    <dimen name="player_top_bar_hidden_translation">-50dp</dimen>
+    <dimen name="player_top_title_text_size">16sp</dimen>
+
+    <!-- 底栏：高度 & 收起时的位移 -->
+    <dimen name="player_bottom_bar_height">69dp</dimen>
+    <dimen name="player_bottom_bar_hidden_translation">69dp</dimen>
+
+    <!-- 进度行（时间文字 + 进度条） -->
+    <dimen name="player_control_progress_row_height">20dp</dimen>
+    <dimen name="player_control_progress_row_margin_top">5dp</dimen>
+    <dimen name="player_control_seek_margin">80dp</dimen>
+    <dimen name="player_control_time_text_size">16sp</dimen>
+
+    <!-- 按钮行（右下角按钮组） -->
+    <dimen name="player_control_btn_size">44dp</dimen>
+    <dimen name="player_control_btn_padding">10dp</dimen>
+    <dimen name="player_control_btn_margin">10dp</dimen>
+    <dimen name="player_control_row_margin_end">20dp</dimen>
+    <dimen name="player_control_play_width">60dp</dimen>
+    <dimen name="player_control_play_height">44dp</dimen>
+    <dimen name="player_control_play_padding">2dp</dimen>
+    <dimen name="player_control_text_size">12sp</dimen>
+    <dimen name="player_control_text_padding">7dp</dimen>
+    <dimen name="player_control_text_drawable_padding">3dp</dimen>
+
+    <!-- 两侧按钮（锁屏、截图） -->
+    <dimen name="player_control_side_btn_size">50dp</dimen>
+    <dimen name="player_control_side_btn_margin">10dp</dimen>
+    <dimen name="player_control_side_btn_padding">12dp</dimen>
+    <dimen name="player_control_side_btn_offset">60dp</dimen>
+    <dimen name="player_control_side_btn_hidden_translation">-60dp</dimen>
+</resources>

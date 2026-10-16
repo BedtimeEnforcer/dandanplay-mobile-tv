@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  电视端（遥控器）用的可聚焦项背景：
+  - state_focused：浅蓝底 + 主题色描边 —— 电视上必须让用户一眼看出焦点在哪
+  - 外面套 ripple：手机上点击仍有水波纹，行为不变
+-->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#22000000">
+    <item>
+        <selector>
+            <item android:state_focused="true">
+                <shape android:shape="rectangle">
+                    <solid android:color="#E4F0FE" />
+                    <corners android:radius="8dp" />
+                    <stroke
+                        android:width="3dp"
+                        android:color="#2095F4" />
+                </shape>
+            </item>
+            <item>
+                <shape android:shape="rectangle">
+                    <solid android:color="#00000000" />
+                    <corners android:radius="8dp" />
+                </shape>
+            </item>
+        </selector>
+    </item>
+</ripple>

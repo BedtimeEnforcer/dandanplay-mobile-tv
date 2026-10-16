@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  播放器顶栏。
+
+  改动后顶栏只剩：返回键（左上）、标题、电量、时间、悬浮窗键（右上）。
+  "设置"键已经移到右下角的按钮组里（layout_player_bottom.xml），
+  和播放/暂停、上一个/下一个、选集、发弹幕、弹幕开关放在一起，方便遥控器操作。
+-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/player_top_ll"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/player_top_bar_height"
+        android:background="@color/player_item_bg_color"
+        android:focusable="false"
+        android:translationY="@dimen/player_top_bar_hidden_translation"
+        tools:translationY="0dp">
+
+        <FrameLayout
+            android:id="@+id/focus_placeholder"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:focusable="true"
+            android:nextFocusLeft="@+id/player_settings_iv"
+            android:nextFocusRight="@+id/player_settings_iv"
+            android:nextFocusUp="@+id/player_settings_iv"
+            android:nextFocusDown="@+id/player_settings_iv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/back_iv"
+            android:layout_width="@dimen/player_top_action_btn_width"
+            android:layout_height="@dimen/player_top_bar_height"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/background_video_action_item"
+            android:focusable="true"
+            android:nextFocusLeft="@+id/back_iv"
+            android:nextFocusRight="@+id/iv_switch_popup"
+            android:nextFocusUp="@+id/back_iv"
+            android:nextFocusDown="@+id/player_lock_iv"
+            android:padding="10dp"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.xyoye.common_component.weight.MarqueeTextView
+            android:id="@+id/video_title_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:nextFocusLeft="@+id/back_iv"
+            android:nextFocusRight="@+id/iv_switch_popup"
+            android:nextFocusDown="@+id/iv_switch_popup"
+            android:singleLine="true"
+            android:textColor="@color/text_white_immutable"
+            android:textSize="@dimen/player_top_title_text_size"
+            app:layout_constraintBottom_toBottomOf="@id/back_iv"
+            app:layout_constraintEnd_toStartOf="@id/battery_view"
+            app:layout_constraintStart_toEndOf="@id/back_iv"
+            app:layout_constraintTop_toTopOf="@id/back_iv"
+            tools:text="标题" />
+
+        <com.xyoye.player_component.widgets.BatteryView
+            android:id="@+id/battery_view"
+            android:layout_width="35dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:focusable="false"
+            android:textColor="@color/white"
+            android:textSize="8sp"
+            app:header_height="9dp"
+            app:header_width="2dp"
+            app:inner_color="#99ffffff"
+            app:inner_margin="0.5dp"
+            app:inner_radius="2dp"
+            app:layout_constraintBottom_toBottomOf="@id/back_iv"
+            app:layout_constraintEnd_toStartOf="@id/system_time_tv"
+            app:layout_constraintTop_toTopOf="@id/back_iv"
+            app:outer_color="@color/white"
+            app:outer_radius="3dp"
+            app:outer_stroke="1dp"
+            tools:ignore="SmallSp"
+            tools:progress="100" />
+
+        <TextView
+            android:id="@+id/system_time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:focusable="false"
+            android:text="@string/test_default_system_time"
+            android:textColor="@color/text_white_immutable"
+            android:textSize="@dimen/player_top_title_text_size"
+            app:layout_constraintBottom_toBottomOf="@id/back_iv"
+            app:layout_constraintEnd_toStartOf="@id/iv_switch_popup"
+            app:layout_constraintTop_toTopOf="@id/back_iv" />
+
+        <ImageView
+            android:id="@+id/iv_switch_popup"
+            android:layout_width="@dimen/player_top_action_btn_width"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/player_control_row_margin_end"
+            android:background="@drawable/background_video_action_item"
+            android:focusable="true"
+            android:nextFocusLeft="@+id/back_iv"
+            android:nextFocusRight="@+id/iv_switch_popup"
+            android:nextFocusUp="@+id/iv_switch_popup"
+            android:nextFocusDown="@+id/player_settings_iv"
+            android:padding="12dp"
+            android:src="@drawable/ic_float_play"
+            app:layout_constraintBottom_toBottomOf="@id/back_iv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/back_iv" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
