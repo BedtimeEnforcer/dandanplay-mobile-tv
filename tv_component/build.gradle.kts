@@ -14,8 +14,8 @@ android {
         applicationId = "com.lz.dandanplay.tv"
         minSdk = 21
         targetSdk = 29
-        versionCode = 61
-        versionName = "4.1.4"
+        versionCode = 62
+        versionName = "4.1.4.1"
         multiDexEnabled = true
 
         // 电视盒子/电视基本都是这两个架构；不分 abi 出单个通用包，装机最省事

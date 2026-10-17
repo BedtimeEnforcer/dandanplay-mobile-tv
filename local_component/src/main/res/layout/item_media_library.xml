@@ -7,15 +7,20 @@
         android:id="@+id/item_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/background_item_press"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/background_media_library_card"
+        android:minHeight="80dp"
+        android:padding="14dp"
         android:nextFocusRight="@id/add_media_storage_bt">
 
         <ImageView
             android:id="@+id/library_cover_iv"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="10dp"
-            android:padding="2dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="5dp"
             android:scaleType="centerInside"
             android:src="@drawable/ic_local_storage"
             app:layout_constraintBottom_toBottomOf="@id/library_url_tv"
@@ -25,17 +30,16 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/library_name_tv"
             android:layout_width="0dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
             android:ellipsize="end"
             android:gravity="start|center_vertical"
             android:maxLines="1"
             android:textColor="@color/text_black"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold"
-            app:autoSizeMaxTextSize="18sp"
+            app:autoSizeMaxTextSize="16sp"
             app:autoSizeMinTextSize="12sp"
             app:autoSizeStepGranularity="1sp"
             app:autoSizeTextType="uniform"
@@ -49,7 +53,7 @@
             android:id="@+id/library_url_tv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="5dp"
             android:ellipsize="middle"
             android:gravity="start"
             android:singleLine="true"
@@ -59,13 +63,14 @@
             app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toStartOf="@+id/library_name_tv"
             app:layout_constraintTop_toBottomOf="@+id/library_name_tv"
+            app:layout_constraintBottom_toBottomOf="parent"
             tools:text="测试" />
 
         <TextView
             android:id="@+id/screencast_status_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="0dp"
             android:background="@drawable/background_text_circle_theme"
             android:paddingHorizontal="8dp"
             android:paddingVertical="3dp"
@@ -77,16 +82,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:visibility="visible" />
-
-        <View
-            style="@style/DividerStyle"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/library_cover_iv"
-            app:layout_constraintTop_toBottomOf="@id/library_url_tv" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

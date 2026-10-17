@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="theme">#2095f4</color>
+    <color name="theme">#087F92</color>
 
-    <color name="text_black">#353535</color>
+    <color name="text_black">#172B3A</color>
     <color name="text_white">#ffffff</color>
 
     <!-- 状态栏颜色 -->
     <color name="status_bar_color">#ffffff</color>
 
     <!-- 普通layout背景色 -->
-    <color name="layout_bg_color">#f3f3f3</color>
+    <color name="layout_bg_color">#F4F8FA</color>
     <!-- 普通item背景色 -->
     <color name="item_bg_color">#ffffff</color>
     <!-- 搜索输入框颜色 -->
-    <color name="search_edit_text_bg_color">#4ea9f4</color>
+    <color name="search_edit_text_bg_color">#DDF2F5</color>
     <!-- 普通item边界线颜色 -->
-    <color name="item_border_color">#08000000</color>
+    <color name="item_border_color">#E5EDF1</color>
 
     <!-- 普通layout背景色-浅色 -->
-    <color name="layout_bg_color_light">#77f3f3f3</color>
+    <color name="layout_bg_color_light">#77F4F8FA</color>
 
     <!-- 以下颜色不随深色模式改变 -->
-    <color name="colorAccent">#2095f4</color>
-    <color name="theme_light">#772095f4</color>
+    <color name="colorAccent">#087F92</color>
+    <color name="theme_light">#DDF2F5</color>
 
     <color name="transparent">#00000000</color>
     <color name="white">#ffffff</color>
@@ -40,10 +40,10 @@
 
     <color name="text_white_immutable">#ffffff</color>
     <color name="text_black_immutable">#353535</color>
-    <color name="text_gray">#999999</color>
+    <color name="text_gray">#607586</color>
     <color name="text_orange">#f89957</color>
-    <color name="text_theme">#2095f4</color>
-    <color name="text_blue">#2095f4</color>
+    <color name="text_theme">#087F92</color>
+    <color name="text_blue">#087F92</color>
     <color name="text_blue_dark">#096dbe</color>
     <color name="text_blue_light">#82bcf3</color>
     <color name="text_pink">#fb7299</color>
@@ -56,7 +56,7 @@
     <color name="warning_color">#FF9800</color>
     <color name="error_color">#F44336</color>
     <color name="success_color">#8BC34A</color>
-    <color name="info_color">#2095f4</color>
+    <color name="info_color">#087F92</color>
     <color name="delete_color">#8BC34A</color>
     <color name="toast_dark_color">#2F3032</color>
 
@@ -64,7 +64,7 @@
     <color name="mask_black_light">#2a000000</color>
     <color name="mask_dialog">#b0000000</color>
 
-    <color name="indicator_checked_color">#2095f4</color>
+    <color name="indicator_checked_color">#087F92</color>
     <color name="indicator_uncheck_color">#999999</color>
 
     <color name="anime_cover_placeholder">#1F888888</color>

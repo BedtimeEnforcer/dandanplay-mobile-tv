@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="theme">#63DFCA</color>
+    <color name="colorAccent">#63DFCA</color>
+    <color name="theme_light">#254C55</color>
+    <color name="text_theme">#63DFCA</color>
+    <color name="text_blue">#63DFCA</color>
+    <color name="text_gray">#A9BAC4</color>
+    <color name="indicator_checked_color">#63DFCA</color>
+
     <color name="text_black">#ffffff</color>
     <color name="text_white">#353535</color>
 

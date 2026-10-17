@@ -35,7 +35,7 @@ import kotlin.random.Random
 class TvMainActivity : AppCompatActivity() {
 
     /** 投屏接收服务是否在跑（绿色状态提示） */
-    private val runningColor = Color.parseColor("#1BA351")
+    private val runningColor = Color.parseColor("#67E1CE")
     private var receiverReady = false
     private val networkReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
@@ -154,7 +154,7 @@ class TvMainActivity : AppCompatActivity() {
                 statusTv.setTextColor(runningColor)
             } else {
                 statusTv.text = getString(R.string.tv_screencast_receiver_stopped)
-                statusTv.setTextColor(ContextCompat.getColor(this@TvMainActivity, R.color.tv_text_secondary))
+                statusTv.setTextColor(ContextCompat.getColor(this@TvMainActivity, R.color.tv_receiver_secondary))
             }
             refreshReceiverAddress()
         }

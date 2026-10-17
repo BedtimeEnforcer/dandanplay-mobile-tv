@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="navigation_checked_color">#63DFCA</color>
+    <color name="navigation_uncheck_color">#A9BAC4</color>
+</resources>

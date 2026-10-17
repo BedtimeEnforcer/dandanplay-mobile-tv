@@ -14,13 +14,16 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/item_bg_color">
+        android:background="@color/layout_bg_color">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/media_lib_rv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:descendantFocusability="afterDescendants"
+            android:clipToPadding="false"
+            android:paddingTop="8dp"
+            android:paddingBottom="72dp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton

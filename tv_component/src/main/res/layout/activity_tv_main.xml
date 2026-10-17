@@ -9,7 +9,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/tv_bg"
+    android:background="@drawable/tv_home_background"
     android:fillViewport="true">
 
     <LinearLayout
@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingStart="48dp"
-        android:paddingTop="26dp"
+        android:paddingTop="32dp"
         android:paddingEnd="48dp"
         android:paddingBottom="22dp">
 
@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:text="@string/app_name"
             android:textColor="@color/tv_text"
-            android:textSize="30sp"
+            android:textSize="29sp"
             android:textStyle="bold" />
 
         <TextView
@@ -41,34 +41,36 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="26dp"
+            android:layout_marginTop="28dp"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:id="@+id/media_library_card"
                 android:layout_width="0dp"
-                android:layout_height="196dp"
+                android:layout_height="188dp"
                 android:layout_weight="1"
                 android:background="@drawable/tv_card_selector"
                 android:clickable="true"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
-                android:gravity="center"
+                android:gravity="start|center_vertical"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
                     android:contentDescription="@string/tv_local_media"
-                    android:src="@drawable/ic_local_storage" />
+                    android:src="@drawable/tv_local_icon" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="14dp"
+                    android:layout_marginTop="12dp"
                     android:text="@string/tv_local_media"
                     android:textColor="@color/tv_text"
-                    android:textSize="24sp"
+                    android:textSize="23sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -83,29 +85,31 @@
             <LinearLayout
                 android:id="@+id/screencast_receiver_card"
                 android:layout_width="0dp"
-                android:layout_height="196dp"
+                android:layout_height="188dp"
                 android:layout_marginStart="28dp"
                 android:layout_weight="1"
-                android:background="@drawable/tv_card_selector"
+                android:background="@drawable/tv_receiver_card_selector"
                 android:clickable="true"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
-                android:gravity="center"
+                android:gravity="start|center_vertical"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
                     android:contentDescription="@string/tv_screencast_receiver"
-                    android:src="@drawable/ic_screencast_receiver" />
+                    android:src="@drawable/tv_receiver_icon" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="14dp"
+                    android:layout_marginTop="12dp"
                     android:text="@string/tv_screencast_receiver"
-                    android:textColor="@color/tv_text"
-                    android:textSize="24sp"
+                    android:textColor="@color/tv_white"
+                    android:textSize="23sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -114,7 +118,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:text="@string/tv_screencast_receiver_desc"
-                    android:textColor="@color/tv_text_secondary"
+                    android:textColor="@color/tv_receiver_secondary"
                     android:textSize="14sp" />
 
                 <!-- 手机端"搜索连接"在某些网络下搜不到时，照着这个地址手动输入即可 -->
@@ -123,7 +127,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
-                    android:textColor="@color/tv_accent"
+                    android:textColor="@color/tv_receiver_accent"
                     android:textSize="15sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -133,13 +137,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:id="@+id/play_history_btn"
                 android:layout_width="0dp"
-                android:layout_height="82dp"
+                android:layout_height="76dp"
                 android:layout_weight="1"
                 android:background="@drawable/tv_button_selector"
                 android:clickable="true"
@@ -165,7 +169,7 @@
             <LinearLayout
                 android:id="@+id/scan_manager_btn"
                 android:layout_width="0dp"
-                android:layout_height="82dp"
+                android:layout_height="76dp"
                 android:layout_marginStart="20dp"
                 android:layout_weight="1"
                 android:background="@drawable/tv_button_selector"
@@ -192,7 +196,7 @@
             <LinearLayout
                 android:id="@+id/player_setting_btn"
                 android:layout_width="0dp"
-                android:layout_height="82dp"
+                android:layout_height="76dp"
                 android:layout_marginStart="20dp"
                 android:layout_weight="1"
                 android:background="@drawable/tv_button_selector"
@@ -219,7 +223,7 @@
             <LinearLayout
                 android:id="@+id/app_setting_btn"
                 android:layout_width="0dp"
-                android:layout_height="82dp"
+                android:layout_height="76dp"
                 android:layout_marginStart="20dp"
                 android:layout_weight="1"
                 android:background="@drawable/tv_button_selector"
@@ -247,7 +251,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="20dp"
             android:text="@string/tv_tips_remote"
             android:textColor="@color/tv_text_secondary"
             android:textSize="14sp" />

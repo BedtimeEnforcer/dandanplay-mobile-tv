@@ -12,8 +12,8 @@ android {
         applicationId = "com.lz.dandanplay.mobile"
         minSdk = 21
         targetSdk = 29
-        versionCode = 61
-        versionName = "4.1.4"
+        versionCode = 62
+        versionName = "4.1.4.1"
         multiDexEnabled = true
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
